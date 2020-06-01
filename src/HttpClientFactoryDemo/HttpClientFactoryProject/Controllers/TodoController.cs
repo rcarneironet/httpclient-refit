@@ -30,5 +30,13 @@ namespace HttpClientFactoryProject.Controllers
                 .For<ITodoApi>("https://jsonplaceholder.typicode.com/");
             return Ok(await api.GetTodos());
         }
+
+        [HttpGet("GetWhatEver")]
+        public async Task<ActionResult> GetWhatever()
+        {
+            var api = RestService
+                .For<IWhateverApi>("https://jsonplaceholder.typicode.com/");
+            return Ok(await api.Get());
+        }
     }
 }
